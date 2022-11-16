@@ -5,8 +5,10 @@
   />
 </div>
 
+
+<!-- <app-ng-for-demo></app-ng-for-demo> -->
+
 <div class="courses">
-  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></app-course-card>
-  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></app-course-card>
-  <app-course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></app-course-card>
+  <app-course-card *ngFor="let course of courses;index as i" (courseSelected)="onCourseSelected($event)" [course]="course" [cardIndex]="i+1"></app-course-card>
 </div>
+
